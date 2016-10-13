@@ -1,51 +1,63 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link   rel="stylesheet" href="css/password.css">
 <script src="js/jquery.js"></script>
 <script src="js/seedrandom.js"></script>
-<style>
-#randomTable {
-    font-family: monospace;
-    font-size: 2.0em;
-}
-</style>
+<script src="js/password.js"></script>
 </head>
+
+
 <body>
+	<div>
+<!--/*第一個功能欄位*/-->
 
-請輸入亂數表的編號：<input type="text" id="txtSeed" value="1234" />
-&nbsp;<input type="button" id="btnGo" value="產生亂數表" />
+<div id="content"> 　　
 
-<div id="randomTable">
+
+    <div class="insert1">
+        
+        <b>請輸入亂數表的編號：</b><input type="text" id="txtSeed" value="1234" /></h1>
+        <br><br><!--/*請輸入亂數表的編號的:區塊-->
+            
+            <div class="insert1-1"><!--/*自定行數:區塊-->
+        <b>自訂行數(01~99):</b><input type = "text"  id = "text_rows1" value = "10" />
+        &nbsp;<input type="button" id="button_1" value="產生亂數表" onclick = "choice1()"/><br><br>
+            </div>
+
+    	<div id="randomTable_1"></div>　<!--/*產生亂數出來的內容:區塊-->
+    </div>
+
 </div>
+<!--/*第二個功能欄位*/-->
+<div class="insert2">
+    
+    <b>請輸入亂數表的編號：</b><input type="text" id="txtSeed_a1" value="1234" /></h1>
+    <br><br><!--/*請輸入亂數表的編號的:區塊-->
+    
+        <div class="insert1-2"><!--/*自定行數:區塊-->
+    <b>自訂行數(01~99)::</b><input type = "text"  id = "text_rows2" value = "10" />
+        </div>
+    &nbsp;<input type="button" id="button_2" value="產生亂數表" onclick = "choice2()"/><br><br>
 
-<script>
+	<div id="randomTable_2"></div> <!--/*產生亂數出來的內容:區塊-->
+	</div>
+<!--/*第三個功能欄位*/-->
+<div class="insert3">
+    
+    <b>請輸入亂數表的編號：</b><input type="text" id="txtSeed_A1" value="1234" /></h1>
+    <br><br><!--/*請輸入亂數表的編號的:區塊-->
+    <div class="insert1-3"><!--/*自定行數:區塊-->
+    <b>自訂行數(01~99)::</b><input type = "text"  id = "text_rows3" value = "10" />
+    </div>
+    &nbsp;<input type="button" id="button_3" value="產生亂數表" onclick = "choice3()"/><br><br>
 
-$("#btnGo").click(function () {
-    var result = "";
-	// 純數字:
-	var sPool = "0123456789";
-    // 數字+小寫字母: (去除 l, o)
-    // var sPool = "abcdefghijkmnpqrstuvwxyz0123456789";
-    // 數字+大小寫字母: (去除 I, O, l, o)
-    // var sPool = "ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnpqrstuvwxyz0123456789";
-
-    Math.seedrandom($("#txtSeed").val()); // 設定亂數種子
-	var iRandom = 0; var ch = "?";
-	for (iRow = 1; iRow <= 10; iRow++) {
-		var sLine = (iRow + 100).toString().substr(1, 2) + ": ";
-		for (iCol = 1; iCol <= 10; iCol++) {
-			iRandom = Math.floor(Math.random() * sPool.length);
-			ch = sPool.substr(iRandom, 1);
-			sLine += ch;
-		}
-		result += sLine + "<br>";
-	}
-	$("#randomTable").html(result);
-});
-
-</script>
+    <div id="randomTable_3"></div><!--/*產生亂數出來的內容:區塊-->
+	
+</div>
 
 </body>
 </html>
