@@ -3,7 +3,7 @@ function choice1() {
     var result = "";
 	var sPool = "0123456789";
 	var rows = new Number(text_rows1.value) ;
-    Math.seedrandom($("#txtSeed").val()); //隨機亂數
+    Math.seedrandom($("#txtSeed").val()); //隨機亂數 //$就是讀取的意思,讀取txtSeed
 	var iRandom = 0;
 	var ch = "?";
 	
@@ -21,7 +21,7 @@ function choice1() {
 		result += sLine + "<br>";
 	}
 	        
-	$("#randomTable_1").html(result);
+	　$("#randomTable_1").html(result);  
 }
 // 功能2:數字+小寫字母: (去除 l, o)
 // var sPool = "abcdefghijkmnpqrstuvwxyz0123456789";
